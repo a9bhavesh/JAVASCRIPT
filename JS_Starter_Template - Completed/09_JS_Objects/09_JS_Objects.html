@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style type="text/css">
+    h1{
+        background-color: green;
+       
+        padding: 20px;
+        text-align: center;
+        color: black;
+    }
+    div
+    {
+       
+        text-align: center; 
+        
+    }
+
+</style>
+</head>
+<body>
+<div>
+    <h1>Object</h1>
+    <h1 id="existing"></h1>
+</div>
+<div>
+     <h1 id="non existing"></h1>
+</div>
+
+<div>
+     <h1 id="notation"></h1>
+</div>
+<div>
+     <h1 id="accessing notation"></h1>
+</div>
+<div>
+     <h1 id="dot notation"></h1>
+</div>
+<div>
+     <h1 id="mix dot"></h1>
+</div>
+<div>
+     <h1 id="nested"></h1>
+</div>
+<div>
+     <h1 id="equal"></h1>
+</div>
+<div>
+     <h1 id="display"></h1>
+</div>
+
+</body>
+
+<script>
+
+    //creation of objects
+
+
+    //Adding properties to objects
+
+    //Retrieving properties of objects
+
+    //declaring Object Literals
+
+    var employee = {
+        name:"bhavesh",
+        age: 40,
+        designation :"manager",
+        50  : "something",
+        
+    };
+    console.log(employee);
+    //Access existing properties
+
+    console.log(employee.name);
+    document.getElementById('existing').innerHTML=employee;
+
+    //Access Non Existing Properties
+    output=employee.salary;
+    console.log(output);
+    document.getElementById('non existing').innerHTML=output;
+    // Usage of Dot and [] notations
+
+    output=employee["name"];  
+
+
+    // use of [] notation where dot is not used for invalid identifiers
+
+                output = employee['50'];
+                console.log(output);
+                document.getElementById('notation').innerHTML=output;
+
+
+    // use of [] notation for accessing dynamic properties
+
+            var emp ={
+                name: "abc",
+                age :40
+            };
+            var myname= "name";
+           output=emp[myname];
+            console.log(output);
+            document.getElementById('accessing notation').innerHTML=output;
+    // nested Objects creation
+
+        var student ={
+            name : "Bhavesh",
+            age : 25,
+            group : "Engg",
+            address : {
+
+                city : "Vadodara",
+                state : "Gujarat",
+                country : "India",
+
+            }
+                    };
+
+    //Accessing them using dot notation
+
+    output = student.address.city;
+    console.log(output);
+    document.getElementById('dot notation').innerHTML=output;
+
+    //Accessing them using mix of dot and [] notation
+      output = student.address["state"];
+    console.log(output);
+    document.getElementById('mix dot').innerHTML=output;
+
+
+
+    // Add some properties to nested object and access them
+
+        student.address.street ="Bajwa";
+        output=student.address.street;
+        console.log(output);
+        document.getElementById('nested').innerHTML=output;
+
+    // === operator demo for objects (if pointing to same location in memory)
+
+
+var student1={
+    name :"abc",
+    age : 25
+
+};
+  
+    var student2 ={
+
+          name :"abc",
+          age :25
+    };
+       // student2 = student1;
+
+     if(student1 === student2)
+     {
+        output ="Both are equal";
+        console.log(output);
+        document.getElementById('equal').innerHTML=output;
+}
+else
+{
+      output ="Both are not equal";
+        console.log(output);
+        document.getElementById('equal').innerHTML=output;
+}   
+
+
+    /* revisiting undefined vs null for objects
+     if no property -> undefined
+     if exists and with value null -> null  */
+
+
+    // deleting a property from an object
+        delete student1.name;
+
+
+
+</script>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Function</title>
+    <style type="text/css">
+        h1{
+            background-color: lightgreen;
+            text-align: center;
+            padding: 5px;
+        }
+        div
+        {
+            background-color: lightgreen;
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Js Fuction Example</h1>
+    <div>
+        <h1 id="display"></h1>
+    </div>
+</body>
+
+<script>
+    //creation of a simple function with no args and execute a function
+                var output = "";
+                function greet()
+                {
+                    output ="Good Afternoon";
+                    console.log(output);
+                    document.getElementById('display').innerHTML=output;
+                }
+                greet();
+
+    //creation of a simple function with args
+
+            output ="";
+            function greetArgs(name)
+            {
+                console.log(output);
+                output="Good Afternoon" +name;
+                document.getElementById('display').innerHTML=output;
+            }
+            greetArgs(" Bhavesh");
+
+    // executing a function with less number of params
+
+                function greetLess(name,age)
+                {
+                    output ="Good Morning" + name + "age:" + age;
+                    console.log(output);
+                    document.getElementById('display').innerHTML=output;
+                }
+                greetLess("Bhavesh",25);
+
+    //executing a function with more number of params
+        greetLess("Bhavesh", 25 ,"Manager");
+
+    //function overloading is not possible here
+
+
+
+    // functions with return values
+
+            function greetMe(name)
+            {
+               var greeting ="Good Morning" +name;
+                return greeting;
+            }
+                output = greetMe(" Bhavesh");
+                console.log(output);
+                document.getElementById('display').innerHTML=output;
+
+    //function with empty return /no return
+
+                function emptyReturn(name)
+                {
+                    var greeting="Good Morning" +name;
+                    return;
+                }
+                output =emptyReturn("Bhavesh");
+                console.log(output);
+                document.getElementById('display').innerHTML=output;
+
+
+    // function Expressions with name and execution
+
+        var greetfn =function greetMe()
+        {
+            var greeting="Good Morning";
+            console.log(greeting);
+             document.getElementById('display').innerHTML=greeting;
+        };
+        greetfn();
+
+    // Anonymous Function Expression and execution
+
+
+        var Anonymous =function ()
+        {
+            var greeting="Good Morning";
+            console.log(greeting);
+             document.getElementById('display').innerHTML=greeting;
+        };
+        Anonymous();
+
+    // Functions as arguments without args
+
+            function greet1()
+            {
+                var greeting = "Good Morning From Greet 1";
+                console.log(greeting);
+                document.getElementById('display').innerHTML=greeting;
+            }
+
+            function greet2()
+            {
+                var greeting = "Good Morning From Greet 2";
+                console.log(greeting);
+                document.getElementById('display').innerHTML=greeting;
+            }
+
+                function greetEnging(fname)
+                {
+                    fname();
+                }
+                greetEnging(greet1);
+                greetEnging(greet2);
+    // Functions as arguments with args args
+
+    function greetme1(name)
+    {
+        var greeting="Good Morning "+name;
+        console.log(greeting);
+        document.getElementById('display').innerHTML=greeting;
+    }
+
+
+    function greetme2(name)
+    {
+        var greeting="Good Afternoon "+name;
+        console.log(greeting);
+        document.getElementById('display').innerHTML=greeting;
+    }
+    function greetmeengline(fname,name)
+    {
+        fname(name);
+    }
+    greetmeengline(greetme1,"Bhavesh");
+    greetmeengline(greetme2,"Pratik");
+    
+    // Functions in Objects and Execution
+
+            var employee={
+                firstname :"Bhavesh",
+                lastname : "Patil",
+                greatfullname : function (){
+
+                    return this.firstname + " " + this.lastname;
+                }
+            };
+            output=employee.greatfullname();
+            console.log(output);
+            document.getElementById('display').innerHTML=output;
+
+    // this keyword for accessing objects props in function
+
+
+    // Coding Exercise 1
+    /*
+    Create an employee obj and address object in it. add a property called
+    isFromState() to return true if a person from that state.
+     */
+
+        var employeenew={
+
+            name :"Bhavesh",
+            age: 24,
+            address : {
+
+                city :"Vadodara",
+                state:"Gujarat",
+                contry:"india"
+            },
+            isFromState : function(state_given){
+                return this.address.state === state_given;
+            }
+        };
+        var state=employeenew.isFromState("Gujarat");
+
+                output="Is From Gujarat ?" +state;
+                console.log(output);
+                document.getElementById('display').innerHTML=output;
+    // Default Function Arguments (arguments)
+
+            function sum()
+            {
+                var sum=0;
+                for(var i=0; i<arguments.length;i++)
+                {
+                    sum += arguments[i];
+
+                }
+                return sum;
+            }
+            output ="This is:" +sum(10,20,30,40,50)
+            console.log(output);
+            document.getElementById('display').innerHTML=output;
+
+</script>
+</html>

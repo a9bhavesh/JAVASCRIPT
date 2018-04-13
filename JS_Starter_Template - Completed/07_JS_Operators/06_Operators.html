@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style type="text/css">
+    h2{
+        background-color: lightgreen;
+        text-align: center;
+        padding: 5px;
+    }
+    div{
+        background-color: green;
+        text-align: center;
+        padding: 10px;
+        color: white;
+        margin: 2px;
+
+
+    }
+
+
+</style>
+</head>
+<body>
+<h2>Js Opertator Example</h2>
+<div>
+<h1 id="display"></h1>    
+</div>
+
+<div>
+<h1 id="Arithmetic"></h1>    
+</div>
+
+<div>
+<h1 id="shor hand"></h1>    
+</div>
+
+<div>
+<h1 id="condition"></h1>    
+</div>
+
+<div>
+<h1 id="Logical"></h1>    
+</div>
+
+<div>
+<h1 id="String"></h1>    
+</div>
+
+<div>
+<h1 id="Ternary"></h1>    
+</div>
+
+<div>
+<h1 id="opera"></h1>    
+</div>
+
+<div>
+<h1 id="equal"></h1>    
+</div>
+
+<div>
+<h1 id="display"></h1>    
+</div>
+
+</body>
+<script>
+
+    // Assignment operator =
+    var num1=20;
+    console.log(num1);
+    var output="Assignment operators:" +num1;
+    document.getElementById('display').innerHTML=output;
+
+    // Arithmetic operators + - * /
+
+        var a=10;
+        var b=20;
+         var sum = a+b;
+         output="The sum is:"+sum;
+         document.getElementById('Arithmetic').innerHTML=output;
+
+   
+    // Short hand math += , -= , *= , /=
+
+        var a=10;
+        var b=20;
+         var sum = a+b;
+         var result =0;
+        // var result=result+sum;
+         result += sum;
+         output="The sum is:"+result;
+         document.getElementById('shor hand').innerHTML=output;
+       
+        
+
+    // Conditional operators < , > , <= , >= , !=
+
+
+
+    var age=30;
+    var isMarried=true;
+    if(age>= 30 && ! isMarried){
+    output("Get Marry");
+    console.log(output);
+    document.getElementById('condition').innerHTML=output;
+    }
+     else{
+            output="find a best match";
+            console.log(output);
+             document.getElementById('condition').innerHTML=output;
+
+         }
+
+    // Unary Operator ++ , -- (pre , post)
+
+    var a=10;
+    a=a+1;
+    a++;
+    // Logical operators AND , OR
+
+    var coursecompleted = true;
+    var gotajob = true;
+    if(coursecompleted && gotajob)
+    {
+     output="go to goa and enjoy";
+        console.log(output);
+        document.getElementById('Logical').innerHTML=output;
+    }
+    else
+    {
+        output="keep trying";
+        console.log(output);
+        document.getElementById('Logical').innerHTML=output;
+    }
+
+    // String Concatenation Operator
+
+        var a=10;
+        var b="123";
+        var c=10;
+        output=a+b;
+
+
+        output=a + b+ c;
+        console.log(output);
+        document.getElementById('String').innerHTML=output;
+
+    // Ternary operator (? :)
+
+        var a=10;
+        var b=20;
+        var big =0;
+        (a>b)? big =a:big =b;
+        output ="big value is:"+big;
+        document.getElementById('Ternary').innerHTML=output;
+
+    // Type of operator
+
+        var somevar;
+         output=typeof somevar;  //undefined
+
+         somevar=10;
+         output=typeof somevar;   //number
+
+         somevar="abc";
+         output=typeof somevar;  //string
+
+         somevar=true;
+         output=typeof somevar;  //boolean
+
+         somevar=null;
+         output=typeof somevar;  //object
+
+            somevar =[10,20,30,40];  //object
+            output = typeof somevar;         
+ 
+    console.log(output);
+    document.getElementById('opera').innerHTML=output;
+
+    
+
+    // == operator
+
+            var num=10;
+            var num1=20;
+            if(num==num1)
+            {
+                output="Both are equal";
+            }
+            else{
+                output="Both are not Equal";
+                console.log(output);
+                document.getElementById('equal').innerHTML=output;
+            }
+
+    // === operator
+
+     var num=10;
+            var num1=20;
+           if(num===num1)
+            {
+                output="Both are equal";
+            }
+            else{
+                output="Both are not Equal";
+                console.log(output);
+                document.getElementById('equal').innerHTML=output;
+            }
+
+
+
+</script>
+</html>
